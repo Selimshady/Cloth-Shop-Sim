@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
+  m_Name: Hair 1
+  m_EditorClassIdentifier: 
+  bodyPartName: Casual Swoop
+  bodyPartAnimationID: 1
+  allBodyPartAnimations:
+  - {fileID: 7400000, guid: f12be3e7b4b03524385567643f36abbc, type: 2}
+  - {fileID: 7400000, guid: 691376b30f6080046805149edc3c56b8, type: 2}
+  - {fileID: 7400000, guid: ac11cca72dae49f449fc30b416dd8ca4, type: 2}
+  - {fileID: 7400000, guid: 2ff7a32b2a380b14f88d6fccd7d192fa, type: 2}
+  - {fileID: 7400000, guid: b833ff854ab6d364da3ccf903cf2c478, type: 2}
+  - {fileID: 7400000, guid: 0432d9a4858e8274589cc67c527ec778, type: 2}
+  - {fileID: 7400000, guid: e054b2970cacf244fa7c14ac899aa7e1, type: 2}
+  - {fileID: 7400000, guid: cad9779940702a04194a1306c618aa5e, type: 2}

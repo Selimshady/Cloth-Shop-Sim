@@ -1,31 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
 
+    public SpriteRenderer hairSpriteRenderer;
+    public SpriteRenderer bodySpriteRenderer;
+    public SpriteRenderer torsoSpriteRenderer;
+    public SpriteRenderer legSpriteRenderer;
+
     private Rigidbody2D _rb;
-
-    private float _moveDirectionHorizontal;
-    private float _moveDirectionVertical;
-
+    private Vector2 _moveDirection;
+    private Animator _animator;
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
-
 
     void Update()
     {
-        _moveDirectionHorizontal =  Input.GetAxis("Horizontal");
-        _moveDirectionVertical = Input.GetAxis("Vertical");
+        _moveDirection = Vector3.zero;
+        _moveDirection.x =  Input.GetAxis("Horizontal");
+        _moveDirection.y = Input.GetAxis("Vertical");
+
+        UpdateAnimation();
     }
 
     private void FixedUpdate()
     {
-        _rb.velocity = new Vector2(_moveDirectionHorizontal, _moveDirectionVertical) * moveSpeed;
+        _rb.MovePosition(_rb.position + _moveDirection * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    private void UpdateAnimation()
+    {
+        if (_moveDirection != Vector2.zero)
+        {
+            _animator.SetFloat("moveX", _moveDirection.x);
+            _animator.SetFloat("moveY", _moveDirection.y);
+            _animator.SetBool("moving", true);
+        }
+        else
+        {
+            _animator.SetBool("moving", false);
+        }
     }
 }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
+  m_Name: Legs 0
+  m_EditorClassIdentifier: 
+  bodyPartName: Pants
+  bodyPartAnimationID: 0
+  allBodyPartAnimations:
+  - {fileID: 7400000, guid: 21b3c6068da71fb4c803e2c5ea5f7faf, type: 2}
+  - {fileID: 7400000, guid: d68ff725402e3cc40ab06fc4f6dc927b, type: 2}
+  - {fileID: 7400000, guid: b6db9ce9195ad1b4795d7399b879c981, type: 2}
+  - {fileID: 7400000, guid: dd8d45f0b1c6f414cb0cf7895371af24, type: 2}
+  - {fileID: 7400000, guid: a1758b5f438e1cb419aebe684c1644c4, type: 2}
+  - {fileID: 7400000, guid: 21b6ffabababf454182b675781254ccc, type: 2}
+  - {fileID: 7400000, guid: f883158234b02c048bb13da60ab49c8f, type: 2}
+  - {fileID: 7400000, guid: bd6df2ab98b956d4281f946677bc775a, type: 2}
