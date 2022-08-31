@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
-using TMPro;
 
 public class NpcInteraction : MonoBehaviour
 {
@@ -12,68 +8,38 @@ public class NpcInteraction : MonoBehaviour
     public UnityEvent interactAction;
     public GameObject canvas;
 
-    public Button[] buttons;
-
-    private bool shopMenuActive;
-
-    // Update is called once per frame
     void Update()
     {
-        if(isInRange)
+        if(isInRange && !InvonteryController.instance.gameObject.activeInHierarchy)
         {
             if(Input.GetKeyDown(interactKey))
             {
-                interactAction.Invoke();
-                UpdateUI();
+                if(canvas.activeInHierarchy)
+                    canvas.SetActive(false);
+                else
+                    canvas.SetActive(true);
             }
             if(Input.GetKeyDown(KeyCode.Escape))
             {
-                CloseShopMenu();
+                canvas.SetActive(false);
             }
         }
     }
-    public void CloseShopMenu()
+ 
+    private void OnTriggerEnter2D(Collider2D other) 
     {
-        canvas.SetActive(false);
-    }
-    
-    private void OnTriggerEnter2D(Collider2D other) {
         if(other.GetComponent<PlayerMovement>())
         {
             isInRange = true;
         }    
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
+    private void OnTriggerExit2D(Collider2D other)
+    {
         if(other.gameObject.GetComponent<PlayerMovement>())
         {
             isInRange = false;
         }    
     }
 
-    public void OpenSelectionMenu()
-    { 
-        canvas.SetActive(true);
-    }
-
-    public void UpdateUI()
-    {
-        /*int money = Invontery.instance.getMoney();
-        moneyText.SetText(money.ToString());
-        if(money < 10)
-        {
-            for(int i=0;i<buttons.Length;i++)
-            {
-                buttons[i].interactable = false;
-            }
-        }
-        else
-        {
-            for(int i=0;i<buttons.Length;i++)
-            {
-                buttons[i].interactable = true;
-            }
-        }
-        */
-    }
 }

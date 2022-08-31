@@ -5,18 +5,23 @@ public class BodyPartsManager : MonoBehaviour
 {
     // ~~ 1. Updates All Animations to Match Player Selections
 
+    public static BodyPartsManager instance;
+
     [SerializeField] private SO_CharacterBody characterBody;
 
-    // String Arrays
-    [SerializeField] private string[] bodyPartTypes;
-    [SerializeField] private string[] characterStates;
-    [SerializeField] private string[] characterDirections;
-    
     // Animation
     private Animator animator;
     private AnimationClip animationClip;
     private AnimatorOverrideController animatorOverrideController;
     private AnimationClipOverrides defaultAnimationClips;
+
+    public static Inventory inventory;
+
+    private void Awake()
+    {
+        inventory = ScriptableObject.CreateInstance<Inventory>();
+        instance = this;
+    }
 
     private void Start()
     {
@@ -28,14 +33,21 @@ public class BodyPartsManager : MonoBehaviour
         defaultAnimationClips = new AnimationClipOverrides(animatorOverrideController.overridesCount);
         animatorOverrideController.GetOverrides(defaultAnimationClips);
 
-        UpdateBodyParts(0, 0); // reset scriptable object
-        UpdateBodyParts(1, 0);
+
+        Buy(0, 0);
+        Buy(1, 0);
+        Buy(2, 0);
+        Buy(3, 0);
+        UpdateBodyParts(0, 0); // reset scriptable object 
+        UpdateBodyParts(1, 0); // initialize
         UpdateBodyParts(2, 0);
         UpdateBodyParts(3, 0);
     }
 
     public void UpdateBodyParts(int bodyPart,int partId)
     {
+        inventory.activeCloths[bodyPart] = partId;
+
         string partType = characterBody.characterBodyParts[bodyPart].bodyPartName; // get scriptable body object with animations
         characterBody.characterBodyParts[bodyPart].bodyPart = Resources.Load<SO_BodyPart>("Scriptable Objects/" + partType + "/" + partType + "_" + partId);
 
@@ -61,4 +73,27 @@ public class BodyPartsManager : MonoBehaviour
             }
         }
     }
+
+    public bool Buy(int bodyPart, int partId)
+    {
+        if (inventory.money >= 100)
+        {
+            inventory.BuyNewDress(bodyPart, partId);// adding into inventory
+            inventory.money -= 100;
+            return true;
+        }
+        else
+            return false;
+    }
+    public bool Sell(int bodyPart, int partId)
+    {
+        if (inventory.GetLength(bodyPart) > 1 && inventory.activeCloths[bodyPart] != partId)
+        {
+            inventory.money += 50;
+            inventory.SellDress(bodyPart, partId);// removing from inventory
+            return true;
+        }
+        return false;
+    }
+
 }
