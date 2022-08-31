@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
+  m_Name: Torso_1
+  m_EditorClassIdentifier: 
+  bodyPartName: Red Shirt
+  bodyPartAnimationID: 1
+  allBodyPartAnimations:
+  - {fileID: 7400000, guid: ab9755051df90304caf93d9716a9bb49, type: 2}
+  - {fileID: 7400000, guid: 62509769706f59b4988cb9cd37ca72cc, type: 2}
+  - {fileID: 7400000, guid: 8a19264b596e6fb468ea4eff882f8e03, type: 2}
+  - {fileID: 7400000, guid: 0108f559675a8624d8339a1dea5cbb3d, type: 2}
+  - {fileID: 7400000, guid: dfedd8ea4dbc0844eadb77cf420fa435, type: 2}
+  - {fileID: 7400000, guid: 3319fe117ab3da94c8d1ff923543448f, type: 2}
+  - {fileID: 7400000, guid: f2699237e264e314da2ecc133ed1e2e6, type: 2}
+  - {fileID: 7400000, guid: 7bc8b000675160a428e47decdee93d77, type: 2}

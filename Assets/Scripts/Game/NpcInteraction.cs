@@ -13,7 +13,6 @@ public class NpcInteraction : MonoBehaviour
     public GameObject canvas;
 
     public Button[] buttons;
-    public TMP_Text moneyText;
 
     private bool shopMenuActive;
 
@@ -41,7 +40,6 @@ public class NpcInteraction : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.GetComponent<PlayerMovement>())
         {
-            Debug.Log("inRange");
             isInRange = true;
         }    
     }
@@ -49,7 +47,6 @@ public class NpcInteraction : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) {
         if(other.gameObject.GetComponent<PlayerMovement>())
         {
-            Debug.Log("outRange");
             isInRange = false;
         }    
     }

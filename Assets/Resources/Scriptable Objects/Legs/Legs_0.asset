@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d56554f0f28e3174b9b0f26242568028, type: 3}
-  m_Name: Legs 0
+  m_Name: Legs_0
   m_EditorClassIdentifier: 
-  bodyPartName: Pants
+  bodyPartName: Blue Pants
   bodyPartAnimationID: 0
   allBodyPartAnimations:
   - {fileID: 7400000, guid: 21b3c6068da71fb4c803e2c5ea5f7faf, type: 2}

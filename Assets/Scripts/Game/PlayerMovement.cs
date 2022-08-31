@@ -4,11 +4,6 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
 
-    public SpriteRenderer hairSpriteRenderer;
-    public SpriteRenderer bodySpriteRenderer;
-    public SpriteRenderer torsoSpriteRenderer;
-    public SpriteRenderer legSpriteRenderer;
-
     private Rigidbody2D _rb;
     private Vector2 _moveDirection;
     private Animator _animator;

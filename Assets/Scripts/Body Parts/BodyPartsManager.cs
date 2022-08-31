@@ -28,39 +28,22 @@ public class BodyPartsManager : MonoBehaviour
         defaultAnimationClips = new AnimationClipOverrides(animatorOverrideController.overridesCount);
         animatorOverrideController.GetOverrides(defaultAnimationClips);
 
-        // Set body part animations
-        UpdateBodyParts();
+        UpdateBodyParts(0, 0); // reset scriptable object
+        UpdateBodyParts(1, 0);
+        UpdateBodyParts(2, 0);
+        UpdateBodyParts(3, 0);
     }
 
-    public void UpdateBodyParts()
+    public void UpdateBodyParts(int bodyPart,int partId)
     {
-        // Override default animation clips with character body parts
-        for (int partIndex = 0; partIndex < bodyPartTypes.Length; partIndex++)
+        string partType = characterBody.characterBodyParts[bodyPart].bodyPartName; // get scriptable body object with animations
+        characterBody.characterBodyParts[bodyPart].bodyPart = Resources.Load<SO_BodyPart>("Scriptable Objects/" + partType + "/" + partType + "_" + partId);
+
+        foreach (AnimationClip clip in characterBody.characterBodyParts[bodyPart].bodyPart.allBodyPartAnimations)
         {
-            // Get current body part
-            string partType = bodyPartTypes[partIndex];
-            // Get current body part ID
-            string partID = characterBody.characterBodyParts[partIndex].bodyPart.bodyPartAnimationID.ToString();
-
-            for (int stateIndex = 0; stateIndex < characterStates.Length; stateIndex++)
-            {
-                string state = characterStates[stateIndex];
-                for (int directionIndex = 0; directionIndex < characterDirections.Length; directionIndex++)
-                {
-                    string direction = characterDirections[directionIndex];
-
-                    // Get players animation from player body
-                    // ***NOTE: Unless Changed Here, Animation Naming Must Be: "[Type]_[Index]_[state]_[direction]" (Ex. Body_0_idle_down)
-                    animationClip = Resources.Load<AnimationClip>("Player Animations/" + partType + "/" + partType + "_" + partID + "_" + state + "_" + direction);
-
-                    // Override default animation
-                    defaultAnimationClips[partType + "_" + 0 + "_" + state + "_" + direction] = animationClip;
-                }
-            }
+            defaultAnimationClips[clip.name.Replace((char)(partId+48),'0')] = clip; // change animations
         }
-
-        // Apply updated animations
-        animatorOverrideController.ApplyOverrides(defaultAnimationClips);
+        animatorOverrideController.ApplyOverrides(defaultAnimationClips); // write over
     }
 
     public class AnimationClipOverrides : List<KeyValuePair<AnimationClip, AnimationClip>>
