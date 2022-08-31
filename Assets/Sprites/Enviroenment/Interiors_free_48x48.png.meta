@@ -2068,8 +2068,8 @@ TextureImporter:
       physicsShape:
       - - {x: -1, y: -25}
         - {x: -22, y: -25}
-        - {x: -22, y: -7}
-        - {x: 22, y: -7}
+        - {x: -22, y: 18}
+        - {x: 22, y: 18}
         - {x: 21, y: -25}
       tessellationDetail: 0
       bones: []
