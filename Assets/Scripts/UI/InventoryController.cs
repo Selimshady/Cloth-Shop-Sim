@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InvonteryController : MonoBehaviour
+public class InventoryController : MonoBehaviour
 {
     public DressButton[] dressButtons;
 
