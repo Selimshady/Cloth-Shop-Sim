@@ -96,4 +96,14 @@ public class BodyPartsManager : MonoBehaviour
         return false;
     }
 
+    public bool Dress(int bodyPart, int partId)
+    {
+        if(inventory.activeCloths[bodyPart] != partId) // write over only if it is different
+        {
+            UpdateBodyParts(bodyPart, partId);
+            return true;
+        }
+        return false;
+    }
+
 }

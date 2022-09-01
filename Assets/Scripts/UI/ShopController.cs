@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -22,10 +20,9 @@ public class ShopController : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    private void Start()
     {
-        moneyText.text = BodyPartsManager.inventory.money.ToString() + "$";
-        foreach(BuyButton button in buyButtons)
+        foreach (BuyButton button in buyButtons)
         {
             if (BodyPartsManager.inventory.GetObject(button.bodyPart, button.partId))
                 button.gameObject.SetActive(false);
@@ -39,6 +36,7 @@ public class ShopController : MonoBehaviour
             else
                 button.gameObject.SetActive(false);
         }
+        moneyText.text = BodyPartsManager.inventory.money.ToString() + "$";
     }
 
     public void onActivateAntiBuyButton(int bodyPart, int partId)

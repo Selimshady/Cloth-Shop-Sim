@@ -4,9 +4,6 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
 
-    public GameObject shopMenu;
-    public GameObject invonteryMenu;
-
     private Rigidbody2D _rb;
     private Vector2 _moveDirection;
     private Animator _animator;
@@ -24,16 +21,6 @@ public class PlayerMovement : MonoBehaviour
         _moveDirection.y = Input.GetAxis("Vertical");
 
         UpdateAnimation();
-
-        if(Input.GetKeyDown(KeyCode.I) && !shopMenu.activeInHierarchy)
-        {
-            if (invonteryMenu.activeInHierarchy)
-            {
-                invonteryMenu.SetActive(false);
-            }
-            else
-                invonteryMenu.SetActive(true);
-        }
 
     }
 

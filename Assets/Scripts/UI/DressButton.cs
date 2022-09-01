@@ -17,6 +17,6 @@ public class DressButton : MonoBehaviour
 
     public void Dress()
     {
-        BodyPartsManager.instance.UpdateBodyParts(bodyPart, partId); // if the process is ok
+        BodyPartsManager.instance.Dress(bodyPart, partId); // no need to control if it is changed
     }
 }

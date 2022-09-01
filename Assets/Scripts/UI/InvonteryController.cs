@@ -6,12 +6,6 @@ public class InvonteryController : MonoBehaviour
 {
     public DressButton[] dressButtons;
 
-    public static InvonteryController instance;
-    private void Awake()
-    {
-        instance = this;
-    }
-
     private void OnEnable()
     {
         foreach (var button in dressButtons)

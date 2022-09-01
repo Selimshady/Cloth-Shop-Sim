@@ -12,7 +12,7 @@ public class Inventory : ScriptableObject
 
     public int money = 650;
 
-    public bool GetObject(int bodyPart, int partId)
+    public bool GetObject(int bodyPart, int partId) // check if it is in the inventory
     {
         switch (bodyPart)
         {
@@ -49,7 +49,7 @@ public class Inventory : ScriptableObject
         }
     }
 
-    public int GetLength(int bodyPart)
+    public int GetLength(int bodyPart) // check if there are more than one item
     {
         switch (bodyPart)
         {
@@ -66,7 +66,7 @@ public class Inventory : ScriptableObject
         }
     }
 
-    public void BuyNewDress(int bodyPart,int partId)
+    public void BuyNewDress(int bodyPart,int partId) // add to inventory
     {
         switch (bodyPart)
         {
@@ -87,7 +87,7 @@ public class Inventory : ScriptableObject
         }
     }
 
-    public void SellDress(int bodyPart,int partId)
+    public void SellDress(int bodyPart,int partId) // remove from invventory
     {
         switch (bodyPart)
         {
