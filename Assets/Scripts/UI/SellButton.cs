@@ -19,7 +19,7 @@ public class SellButton : MonoBehaviour
     
     public void Sell()
     {
-        if(BodyPartsManager.instance.Sell(bodyPart, partId)) // if the process is ok. it check if it is last item or wearing it.
+        if(BodyPartsManager.instance.Sell(bodyPart, partId)) // if the process is ok. it checks if it is last item or wearing it.
         {
             ActivateAntiBuyButton(bodyPart,partId);
             _button.gameObject.SetActive(false);

@@ -6,7 +6,6 @@ public class NpcInteraction : MonoBehaviour
     public bool isInRange;
     public UnityAction TriggerExit;
 
-
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if(other.GetComponent<PlayerMovement>())

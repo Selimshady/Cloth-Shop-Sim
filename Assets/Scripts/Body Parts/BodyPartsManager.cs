@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class BodyPartsManager : MonoBehaviour
 {
-    // ~~ 1. Updates All Animations to Match Player Selections
-
     public static BodyPartsManager instance;
 
     [SerializeField] private SO_CharacterBody characterBody;

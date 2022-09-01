@@ -5,25 +5,25 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     public GameObject shopMenu;
-    public GameObject invonteryMenu;
+    public GameObject inventoryMenu;
     public NpcInteraction npc;
 
     private void Awake()
     {
-        npc.TriggerExit = InventoryTriggerExit;
+        npc.TriggerExit = ShopTriggerExit;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I) && !shopMenu.activeInHierarchy)
+        if (Input.GetKeyDown(KeyCode.I) && !shopMenu.activeInHierarchy) // block if shop menu is active
         {
-            if (invonteryMenu.activeInHierarchy)
-                invonteryMenu.SetActive(false);
+            if (inventoryMenu.activeInHierarchy)
+                inventoryMenu.SetActive(false);
             else
-                invonteryMenu.SetActive(true);
+                inventoryMenu.SetActive(true);
         }
 
-        if(Input.GetKeyDown(KeyCode.F) && !invonteryMenu.activeInHierarchy)
+        if(Input.GetKeyDown(KeyCode.F) && !inventoryMenu.activeInHierarchy) // block if inventory is active
         {
             if(npc.isInRange)
             {
@@ -35,8 +35,8 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    public void InventoryTriggerExit()
+    public void ShopTriggerExit() 
     {
-        shopMenu.SetActive(false);
+        shopMenu.SetActive(false); // if get away from npc
     }
 }

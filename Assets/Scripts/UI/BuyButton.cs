@@ -19,7 +19,7 @@ public class BuyButton : MonoBehaviour
 
     public void Buy()
     {
-        if(BodyPartsManager.instance.Buy(bodyPart, partId)) // if the process is ok check for money
+        if(BodyPartsManager.instance.Buy(bodyPart, partId)) // if the process is ok checks for money
         {
             ActivateAntiSellButton(bodyPart,partId);
             _button.gameObject.SetActive(false);

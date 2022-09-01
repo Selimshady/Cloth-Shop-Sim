@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopMenu: {fileID: 724527835}
-  invonteryMenu: {fileID: 910852990}
+  inventoryMenu: {fileID: 910852990}
   npc: {fileID: 577181189}
 --- !u!1 &1234161
 GameObject:
@@ -284,8 +284,9 @@ GameObject:
   - component: {fileID: 1234164}
   - component: {fileID: 1234163}
   - component: {fileID: 1234162}
+  - component: {fileID: 1234166}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: DialogueCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -373,6 +374,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1234166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2f6c81adb125b4caddbaa7832ea797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionPoints:
+  - {fileID: 560045554}
+  - {fileID: 1907048639}
+  - {fileID: 371073345}
+  - {fileID: 13229434}
+  panel: {fileID: 1874131514}
+  text: {fileID: 1804687561}
+  textSpeed: 0.02
 --- !u!1 &6126114
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,12 +506,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ceecedf671d85b488f84abc150ed6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1804687561}
-  textSpeed: 0.01
   sentences:
   - I will buy it for my mom's birthday.
   - They are all same.
-  panel: {fileID: 1874131514}
 --- !u!61 &13229435
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -504,7 +522,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.4827461, y: -0.6354846}
+  m_Offset: {x: 2.4827461, y: -1.0763563}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -515,7 +533,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.010724, y: 2.3997886}
+  m_Size: {x: 6.010724, y: 3.281532}
   m_EdgeRadius: 0
 --- !u!213 &23191274
 Sprite:
@@ -2855,12 +2873,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ceecedf671d85b488f84abc150ed6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1804687561}
-  textSpeed: 0.01
   sentences:
   - Not much new cloths.
   - It is so expensive.
-  panel: {fileID: 1874131514}
 --- !u!61 &371073346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2874,7 +2889,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.4827461, y: -0.76669645}
+  m_Offset: {x: 2.4827461, y: -0.41147095}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2885,7 +2900,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.010724, y: 2.662212}
+  m_Size: {x: 6.010724, y: 3.4931278}
   m_EdgeRadius: 0
 --- !u!1 &384722307
 GameObject:
@@ -3409,12 +3424,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ceecedf671d85b488f84abc150ed6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1804687561}
-  textSpeed: 0.01
   sentences:
   - I look nice!
   - You talkin' to me?
-  panel: {fileID: 1874131514}
 --- !u!61 &560045555
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3428,7 +3440,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2089696, y: -0.062690735}
+  m_Offset: {x: 0.19969511, y: -0.09051442}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3439,7 +3451,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3343515, y: 1.1253815}
+  m_Size: {x: 1.6311388, y: 1.1810288}
   m_EdgeRadius: 0
 --- !u!1 &574850819
 GameObject:
@@ -3638,7 +3650,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06206107, y: 0.37002003}
+  m_Offset: {x: 0.031261683, y: 0.32905984}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -3649,7 +3661,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7652249, y: 2.9742458}
+  m_Size: {x: 2.038014, y: 3.0561662}
   m_EdgeRadius: 0
 --- !u!1 &596713876
 GameObject:
@@ -13471,12 +13483,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ceecedf671d85b488f84abc150ed6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1804687561}
-  textSpeed: 0.01
   sentences:
   - I want to visit Istanbul one day.
   - We need to protect the world.
-  panel: {fileID: 1874131514}
 --- !u!61 &1907048640
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13490,7 +13499,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.22829247, y: -0.14642334}
+  m_Offset: {x: 0.24878383, y: -0.14642334}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -13501,7 +13510,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5018167, y: 1.4216661}
+  m_Size: {x: 2.046208, y: 1.4216661}
   m_EdgeRadius: 0
 --- !u!1 &1921642598
 GameObject:

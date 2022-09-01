@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class Inventory : ScriptableObject
 {
-    private List<int> _bodyInventery = new List<int>();
-    private List<int> _hairInventery = new List<int>();
-    private List<int> _torsoInventery = new List<int>();
-    private List<int> _legsInvontery = new List<int>();
+    private List<int> _bodyInventory = new List<int>();
+    private List<int> _hairInventory = new List<int>();
+    private List<int> _torsoInventory = new List<int>();
+    private List<int> _legsInventory = new List<int>();
 
     public int[] activeCloths = new int[4];
 
@@ -17,30 +17,30 @@ public class Inventory : ScriptableObject
         switch (bodyPart)
         {
             case 0:
-                for (int i = 0; i < _bodyInventery.Count; i++)
+                for (int i = 0; i < _bodyInventory.Count; i++)
                 {
-                    if (partId == _bodyInventery[i])
+                    if (partId == _bodyInventory[i])
                         return true;
                 }
                 return false;
             case 1:
-                for (int i = 0; i < _hairInventery.Count; i++)
+                for (int i = 0; i < _hairInventory.Count; i++)
                 {
-                    if (partId == _hairInventery[i])
+                    if (partId == _hairInventory[i])
                         return true;
                 }
                 return false;
             case 2:
-                for (int i = 0; i < _torsoInventery.Count; i++)
+                for (int i = 0; i < _torsoInventory.Count; i++)
                 {
-                    if (partId == _torsoInventery[i])
+                    if (partId == _torsoInventory[i])
                         return true;
                 }
                 return false;
             case 3:
-                for (int i = 0; i < _legsInvontery.Count; i++)
+                for (int i = 0; i < _legsInventory.Count; i++)
                 { 
-                    if (partId == _legsInvontery[i])
+                    if (partId == _legsInventory[i])
                         return true;
                 }
                 return false;
@@ -54,13 +54,13 @@ public class Inventory : ScriptableObject
         switch (bodyPart)
         {
             case 0:
-                return _bodyInventery.Count;
+                return _bodyInventory.Count;
             case 1:
-                return _hairInventery.Count;
+                return _hairInventory.Count;
             case 2:
-                return _torsoInventery.Count;
+                return _torsoInventory.Count;
             case 3:
-                return _legsInvontery.Count;
+                return _legsInventory.Count;
             default:
                 return 0;
         }
@@ -71,16 +71,16 @@ public class Inventory : ScriptableObject
         switch (bodyPart)
         {
             case 0:
-                _bodyInventery.Add(partId);
+                _bodyInventory.Add(partId);
                 return;
             case 1:
-                _hairInventery.Add(partId);
+                _hairInventory.Add(partId);
                 return;
             case 2:
-                _torsoInventery.Add(partId);
+                _torsoInventory.Add(partId);
                 return;
             case 3:
-                _legsInvontery.Add(partId);
+                _legsInventory.Add(partId);
                 return;
             default:
                 return;
@@ -92,16 +92,16 @@ public class Inventory : ScriptableObject
         switch (bodyPart)
         {
             case 0:
-                _bodyInventery.Remove(partId);
+                _bodyInventory.Remove(partId);
                 return;
             case 1:
-                _hairInventery.Remove(partId);
+                _hairInventory.Remove(partId);
                 return;
             case 2:
-                _torsoInventery.Remove(partId);
+                _torsoInventory.Remove(partId);
                 return;
             case 3:
-                _legsInvontery.Remove(partId);
+                _legsInventory.Remove(partId);
                 return;
             default:
                 return;

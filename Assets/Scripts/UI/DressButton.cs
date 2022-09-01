@@ -8,7 +8,6 @@ public class DressButton : MonoBehaviour
     public int bodyPart;
     public int partId;
 
-
     private void Awake()
     {
         _button = GetComponent<Button>();
